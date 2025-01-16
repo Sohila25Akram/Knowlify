@@ -27,7 +27,7 @@ export default function GuestButton() {
   return (
     <div
       onClick={handleToggleGuest}
-      className="text-center text-greyText mb-[10px] leading-[33.73px] text-buttonText"
+      className="text-center text-greyText mb-[10px] leading-[33.73px] text-buttonText cursor-pointer"
     >
       {loading ? (
         <button className="inline-flex h-12 items-center justify-center gap-2.5 rounded-lg bg-primary px-6 py-3 text-base font-medium text-greyText">
