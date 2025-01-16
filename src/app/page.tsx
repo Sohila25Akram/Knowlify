@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Slider from "@/components/Slider/CoursesSlider";
 
-export default function Home() {
+export default function page() {
   return (
     <div className="me-[-66px]">
       <OurSection />
@@ -11,7 +11,7 @@ export default function Home() {
   );
 }
 
-export function OurSection() {
+const OurSection = () => {
   return (
     <section className="slide">
       <div className="flex justify-between items-center me-[66px] relative z-[2]">
@@ -25,4 +25,4 @@ export function OurSection() {
       <Slider />
     </section>
   );
-}
+};
