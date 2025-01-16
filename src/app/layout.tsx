@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavHeaderWrapper from "@/components/NavHeaderWrapper/NavHeaderWrapper";
+import Providers from "@/components/Provider/Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,12 +24,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const isAuthenticated = false;
+  // const isGuestA = false;
+  // const isGuest = dispatch()
+  // const isGuestA = useSelector((state: RootState) => state.guest.isGuest);
+
+  // const isGuestA = isGuest;
+  // const pathname = usePathname();
+
+  // Define pages that should not include the layout
+  // const excludeLayoutPages = ["/register-login"];
+
+  // const shouldExcludeLayout = excludeLayoutPages.includes(pathname);
+
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <NavHeaderWrapper>{children}</NavHeaderWrapper>
+        </Providers>
       </body>
     </html>
   );
