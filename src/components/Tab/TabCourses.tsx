@@ -47,7 +47,7 @@ export default function Tab() {
     } else {
       setActiveSubItem(null);
     }
-  }, [tabs]);
+  }, []);
 
   return (
     <>
