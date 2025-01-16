@@ -1,17 +1,20 @@
 "use client";
 
 import { setCourseCategory } from "@/store/courseCategorySlice";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 
 export default function Tab() {
-  const tabs = [
-    "الدورات التعليمية الاعلى مبيعًا",
-    "الدورات التعليمية المرفوعة مؤخرا",
-    "مقترحا لك",
-    "دورات تعليمية مميزة",
-    "دورات تهم الطلاب",
-  ];
+  const tabs = useMemo(
+    () => [
+      "الدورات التعليمية الاعلى مبيعًا",
+      "الدورات التعليمية المرفوعة مؤخرا",
+      "مقترحا لك",
+      "دورات تعليمية مميزة",
+      "دورات تهم الطلاب",
+    ],
+    []
+  );
 
   const [smallList, setSmallList] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
@@ -47,7 +50,7 @@ export default function Tab() {
     } else {
       setActiveSubItem(null);
     }
-  }, []);
+  }, [tabs, activeTab]);
 
   return (
     <>

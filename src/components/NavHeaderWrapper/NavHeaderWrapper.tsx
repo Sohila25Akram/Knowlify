@@ -12,7 +12,8 @@ type Props = {
 
 export default function NavHeaderWrapper({ children }: Props) {
   const isGuest = useSelector((state: RootState) => state.guest.isGuest);
-  const isGuestFromLocalStorage = localStorage.getItem("isGuest");
+  const isGuestFromLocalStorage =
+    typeof window !== "undefined" && localStorage.getItem("isGuest");
 
   return (
     <>
