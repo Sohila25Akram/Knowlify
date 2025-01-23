@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logoText from "../../../public/images/logo-text.svg";
 import logo from "../../../public/images/logo.svg";
 import burgerMenu from "../../../public/images/icons/menu/burger-menu.svg";
@@ -13,13 +13,13 @@ import { setIsOpen } from "@/store/otherSlice";
 import { RootState } from "@/store/store";
 
 export default function Header() {
-  const [isHydrated, setIsHydrated] = useState(false);
+  // const [isHydrated, setIsHydrated] = useState(false);
   const isLogged = useSelector(
     (state: RootState) => state.authentication.isAuthenticated
   );
-  const [user, setUser] = useState({
-    email: "",
-  });
+  // const [user, setUser] = useState({
+  //   email: "",
+  // });
   const navState = useSelector((state: RootState) => state.burgerMenu.isOpen);
   const dispatch = useDispatch();
 
@@ -27,21 +27,21 @@ export default function Header() {
     dispatch(setIsOpen(!navState));
   };
 
-  useEffect(() => {
-    setIsHydrated(true);
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      const userData = JSON.parse(storedUser);
-      setUser((prevUser) => ({
-        ...prevUser,
-        email: userData.email,
-      }));
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   // setIsHydrated(true);
+  //   const storedUser = localStorage.getItem("user");
+  //   if (storedUser) {
+  //     const userData = JSON.parse(storedUser);
+  //     setUser((prevUser) => ({
+  //       ...prevUser,
+  //       email: userData.email,
+  //     }));
+  //   }
+  // }, [user]);
 
-  if (!isHydrated) {
-    return null;
-  }
+  // if (!isHydrated) {
+  //   return null;
+  // }
   return (
     <>
       <div className="justify-between items-center py-5 px-[60px] hidden lg:flex">
@@ -58,7 +58,7 @@ export default function Header() {
               className="text-ellipsis overflow-hidden whitespace-nowrap text-[small]"
               style={{ direction: "ltr" }}
             >
-              {user.email}
+              username
             </p>
           </div>
         ) : (
