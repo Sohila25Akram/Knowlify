@@ -13,6 +13,7 @@ import { setIsOpen } from "@/store/otherSlice";
 import { RootState } from "@/store/store";
 
 export default function Header() {
+  const [isHydrated, setIsHydrated] = useState(false);
   const isLogged = useSelector(
     (state: RootState) => state.authentication.isAuthenticated
   );
@@ -26,9 +27,9 @@ export default function Header() {
     dispatch(setIsOpen(!navState));
   };
 
-  const storedUser = localStorage.getItem("user");
-
   useEffect(() => {
+    setIsHydrated(true);
+    const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const userData = JSON.parse(storedUser);
       setUser((prevUser) => ({
@@ -36,7 +37,11 @@ export default function Header() {
         email: userData.email,
       }));
     }
-  }, [storedUser]);
+  }, [user]);
+
+  if (!isHydrated) {
+    return null;
+  }
   return (
     <>
       <div className="justify-between items-center py-5 px-[60px] hidden lg:flex">
