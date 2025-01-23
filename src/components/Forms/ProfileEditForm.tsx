@@ -128,13 +128,14 @@ export default function ProfileEditForm() {
           {userData.map((item) => (
             <div key={item.name} className="overflow-hidden">
               <label>{item.label}</label>
-              <Input
-                name={item.name}
-                defaultVal={item.defaultVal}
-                type={item.type}
-                icon={item.icon !== "" && item.icon}
-                isIcon={item.icon !== "" && true}
-              />
+              <Input>
+                <input
+                  name={item.name}
+                  type={item.type}
+                  defaultValue={item.defaultVal}
+                  className="block grow h-full bg-transparent outline-0 text-textInTxtBox"
+                />
+              </Input>
             </div>
           ))}
         </div>

@@ -24,7 +24,7 @@ export default function page() {
   ];
   return (
     <>
-      <section className="grid grid-cols-2 gap-[50px]">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-[50px]">
         <div>
           <h2 className="text-orangeColor text-[22px] mb-[4px]">
             <span>الفصل ٤</span>: {courseTitle}

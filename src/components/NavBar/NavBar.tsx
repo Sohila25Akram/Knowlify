@@ -16,6 +16,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+// import { usePathname, useRouter } from "next/navigation";
 
 const nav = [
   {
@@ -55,12 +56,24 @@ const nav = [
     link: "/logout",
   },
 ];
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
   const navState = useSelector((state: RootState) => state.burgerMenu.isOpen);
+  // const pathname = usePathname();
+  // const router = useRouter();
 
+  // const hideHeaderRoutes = ["/profile", "/exams"];
+  // const shouldHideHeader = hideHeaderRoutes.includes(pathname);
+
+  // const auth = useSelector(
+  //   (state: RootState) => state.authentication.isAuthenticated
+  // );
+  // if (shouldHideHeader && auth === false) {
+  //   router.push("/register-login/ogin");
+  // }
   useEffect(() => {
     setIsOpen(navState);
     console.log(navState);
