@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        custom: '0px 4px 20px 0px #0000001F',
+        custom: "0px 4px 20px 0px #0000001F",
       },
       fontSize: {
         heading: "1.875rem", // 30px
@@ -35,6 +35,7 @@ export default {
         failed: "#FF0000",
         lightOrange: "#FFECDB",
         lightBlue: "#EDF3FF",
+        danger: "#f55",
       },
     },
   },

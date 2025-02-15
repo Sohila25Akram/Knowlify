@@ -48,6 +48,7 @@ export default function RootLayout({
         <Providers>
           <NavHeaderWrapper>{children}</NavHeaderWrapper>
         </Providers>
+        {/* <Footer /> */}
       </body>
     </html>
   );

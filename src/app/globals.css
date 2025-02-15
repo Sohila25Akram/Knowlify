@@ -45,4 +45,7 @@ body {
   .btn-second {
     @apply flex items-center justify-center gap-[10px] h-[54px] w-full min-w-[120px] block bg-lightOrange text-orangeColor text-buttonText rounded-[10px] text-center;
   }
+  .separator {
+    @apply w-[1px] h-[29px] bg-[#E5E5E5];
+  }
 }

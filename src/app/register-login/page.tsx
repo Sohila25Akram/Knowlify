@@ -35,6 +35,8 @@ const registerData = [
     placeholder: "",
     icon: password,
     type: "password",
+    validation:
+      "Passwords must have at least one non alphanumeric character., Passwords must have at least one lowercase ('a'-'z')., Passwords must have at least one uppercase ('A'-'Z').",
   },
   {
     name: "parentPhone",

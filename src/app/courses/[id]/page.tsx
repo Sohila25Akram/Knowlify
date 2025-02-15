@@ -5,6 +5,8 @@ import Link from "next/link";
 import arrow from "../../../../public/images/icons/arrow-simple.svg";
 import teacher from "../../../../public/images/teacher-1.svg";
 import Accordion from "@/components/CourseSection/CourseSection";
+import RatingCard from "@/components/RatingCard/RatingCard";
+import CourseList from "@/components/CourseList/CourseList";
 
 type Item = {
   sections?: number;
@@ -119,12 +121,41 @@ export default function page() {
         </div>
       </section>
       <section className="mt-[30px]">
-        <Link
-          href=""
-          className="border border-orangeColor text-greyText p-[10px] rounded-[8px] text-buttonText block w-fit ms-auto"
-        >
-          قيم هذه الدورة
-        </Link>
+        <header className="mb-[10px]">
+          <div className="flex justify-between items-center">
+            <h3 className="text-orangeColor text-buttonText mb-[4px]">
+              تقييم للدورة
+            </h3>
+            <Link
+              href=""
+              className="border border-orangeColor text-greyText p-[10px] rounded-[8px] text-buttonText block w-fit ms-auto"
+            >
+              قيم هذه الدورة
+            </Link>
+          </div>
+          <div className="flex gap-[10px] items-center text-[#666666]">
+            <span>⭐</span>
+            <span>
+              <span>4.5</span> تقييم الدورة
+            </span>
+            <div
+              className="separator"
+              style={{ height: "20px", backgroundColor: "#666666" }}
+            ></div>
+            <span>تقييمات 41 ألف</span>
+          </div>
+        </header>
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-[40px]">
+          <RatingCard />
+          <RatingCard />
+          <RatingCard />
+        </section>
+      </section>
+      <section>
+        <h2 className="text-orangeColor text-light font-bold">مقترحا لك</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-[10px] mb-5">
+          <CourseList />
+        </div>
       </section>
     </>
   );

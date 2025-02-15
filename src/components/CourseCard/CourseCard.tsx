@@ -74,7 +74,7 @@ export default function CourseCard({ type }: Props) {
           </span>
           <span className="opacity-50">4.5</span>
         </span>
-        <div className="w-[1px] h-[29px] bg-[#E5E5E5]"></div>
+        <div className="separator"></div>
         <span className="flex items-center gap-[4px]">
           <span className="w-[16px] h-[16px]">
             <Image src={group} alt="rates" width={16} height={16} />
